@@ -1,13 +1,13 @@
 jQuery(function () {
-  var $live_update, $tree_nodes, $tree_nodes_max_depth, $tree_nodes_options, $update_button, live_update_mode, updateNodes;
-  updateNodes = function (tree_nodes) {
+  var $liveUpdate, $treeNodes, $treeNodesMaxDeth, $treeNodesOptions, $updateButton, liveUpdateMode, updateNodes;
+  updateNodes = function (treeNodes) {
     var serialized_tree;
-    serialized_tree = tree_nodes.nestable('serialize');
+    serialized_tree = treeNodes.nestable('serialize');
     return $.ajax({
-      url: tree_nodes.data('update-path'),
+      url: treeNodes.data('update-path'),
       type: 'POST',
       data: {
-        tree_nodes: serialized_tree
+        treeNodes: serialized_tree
       },
       success: function (data) {
         var $flash;
@@ -19,27 +19,27 @@ jQuery(function () {
       }
     });
   };
-  $tree_nodes = $('#tree_nodes');
-  $tree_nodes_options = {};
-  $tree_nodes_max_depth = $tree_nodes.data('max-depth');
-  $live_update = $('#rails_admin_nestable input[type=checkbox]');
-  $update_button = $('#rails_admin_nestable button');
-  live_update_mode = (!$live_update.length && !$update_button.length) ? true : $live_update.prop('checked');
-  $('#rails_admin_nestable button').prop('disabled', $live_update.prop('checked'));
-  $live_update.change(function () {
-    live_update_mode = $(this).prop('checked');
-    return $update_button.prop('disabled', live_update_mode);
+  $treeNodes = $('#treeNodes');
+  $treeNodesOptions = {};
+  $treeNodesMaxDeth = $treeNodes.data('max-depth');
+  $liveUpdate = $('#rails_admin_nestable input[type=checkbox]');
+  $updateButton = $('#rails_admin_nestable button');
+  liveUpdateMode = (!$liveUpdate.length && !$updateButton.length) ? true : $liveUpdate.prop('checked');
+  $('#rails_admin_nestable button').prop('disabled', $liveUpdate.prop('checked'));
+  $liveUpdate.change(function () {
+    liveUpdateMode = $(this).prop('checked');
+    return $updateButton.prop('disabled', liveUpdateMode);
   });
-  $update_button.click(function () {
-    return updateNodes($tree_nodes);
+  $updateButton.click(function () {
+    return updateNodes($treeNodes);
   });
-  if ($tree_nodes_max_depth && $tree_nodes_max_depth !== 'false') {
-    $tree_nodes_options['maxDepth'] = $tree_nodes_max_depth;
+  if ($treeNodesMaxDeth && $treeNodesMaxDeth !== 'false') {
+    $treeNodesOptions['maxDepth'] = $treeNodesMaxDeth;
   }
-  return $tree_nodes.nestable($tree_nodes_options).on({
+  return $treeNodes.nestable($treeNodesOptions).on({
     change: function (event) {
-      if (live_update_mode) {
-        return updateNodes($tree_nodes);
+      if (liveUpdateMode) {
+        return updateNodes($treeNodes);
       }
     }
   });
