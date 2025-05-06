@@ -1,17 +1,33 @@
 jQuery(function () {
-  var $liveUpdate, $treeNodes, $treeNodesMaxDeth, $treeNodesOptions, $updateButton, liveUpdateMode, updateNodes;
+  var $liveUpdate;
+  var $treeNodes;
+  var $treeNodesMaxDeth;
+  var $treeNodesOptions;
+  var $updateButton;
+  var liveUpdateMode;
+  var updateNodes;
+
   updateNodes = function (treeNodes) {
-    var serialized_tree;
-    serialized_tree = treeNodes.nestable('serialize');
+    var serializedTree;
+    serializedTree = treeNodes.nestable('serialize');
     return $.ajax({
       url: treeNodes.data('update-path'),
       type: 'POST',
       data: {
-        treeNodes: serialized_tree
+        treeNodes: serializedTree
       },
       success: function (data) {
         var $flash;
-        $flash = $('<div>').addClass('nestable-flash alert alert-success').append($('<button>').addClass('close').data('dismiss', 'alert').html('&times;')).append($('<span>').addClass('body').html(data));
+        $flash = $('<div>')
+          .addClass('nestable-flash alert alert-success')
+          .append($('<button>')
+          .addClass('close')
+          .data('dismiss', 'alert')
+          .html('&times;'))
+          .append($('<span>')
+          .addClass('body')
+          .html(data));
+
         $('#rails_admin_nestable').append($flash);
         return $flash.fadeIn(200).delay(2000).fadeOut(200, function () {
           return $(this).remove();
