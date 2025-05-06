@@ -19,7 +19,7 @@ jQuery(function () {
       }
     });
   };
-  $treeNodes = $('#treeNodes');
+  $treeNodes = $('#tree_nodes');
   $treeNodesOptions = {};
   $treeNodesMaxDeth = $treeNodes.data('max-depth');
   $liveUpdate = $('#rails_admin_nestable input[type=checkbox]');
