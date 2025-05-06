@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * jQuery Nestable
  */
@@ -51,7 +50,13 @@
   font-weight: bold;
   border: 1px solid #ccc;
   background: #fafafa;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eee));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fafafa),
+    to(#eee)
+  );
   background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
   background: -o-linear-gradient(top, #fafafa 0%, #eee 100%);
   background: linear-gradient(to bottom, #fafafa 0%, #eee 100%);
@@ -95,7 +100,7 @@
   text-indent: 0;
 }
 
-.dd-item > button[data-action=collapse]:before {
+.dd-item > button[data-action="collapse"]:before {
   content: "-";
 }
 
@@ -114,9 +119,42 @@
   border: 1px dashed #bbb;
   min-height: 100px;
   background-color: #e5e5e5;
-  background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-  background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-  background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-image: -webkit-linear-gradient(
+      45deg,
+      #fff 25%,
+      transparent 25%,
+      transparent 75%,
+      #fff 75%,
+      #fff
+    ),
+    -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff
+          75%, #fff);
+  background-image: -moz-linear-gradient(
+      45deg,
+      #fff 25%,
+      transparent 25%,
+      transparent 75%,
+      #fff 75%,
+      #fff
+    ),
+    -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff
+          75%, #fff);
+  background-image: linear-gradient(
+      45deg,
+      #fff 25%,
+      transparent 25%,
+      transparent 75%,
+      #fff 75%,
+      #fff
+    ),
+    linear-gradient(
+      45deg,
+      #fff 25%,
+      transparent 25%,
+      transparent 75%,
+      #fff 75%,
+      #fff
+    );
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
@@ -170,7 +208,13 @@
   color: #fff;
   border: 1px solid #999;
   background: #bbb;
-  background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#999));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#bbb),
+    to(#999)
+  );
   background: -webkit-linear-gradient(top, #bbb 0%, #999 100%);
   background: -o-linear-gradient(top, #bbb 0%, #999 100%);
   background: linear-gradient(to bottom, #bbb 0%, #999 100%);
@@ -210,7 +254,13 @@
   font-weight: bold;
   border: 1px solid #ccc;
   background: #fafafa;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eee));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fafafa),
+    to(#eee)
+  );
   background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
   background: -o-linear-gradient(top, #fafafa 0%, #eee 100%);
   background: linear-gradient(to bottom, #fafafa 0%, #eee 100%);
@@ -245,7 +295,13 @@
   overflow: hidden;
   border: 1px solid #aaa;
   background: #ddd;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#bbb));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ddd),
+    to(#bbb)
+  );
   background: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
   background: -o-linear-gradient(top, #ddd 0%, #bbb 100%);
   background: linear-gradient(to bottom, #ddd 0%, #bbb 100%);
@@ -304,5 +360,3 @@
   display: none;
   min-width: 150px;
 }
-
-/*# sourceMappingURL=rails_admin_nestable.css.map */
